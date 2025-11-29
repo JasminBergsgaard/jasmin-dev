@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import headshot from './assets/professional-headshot.jpg';
-import { Layout, RefreshCcw, Zap } from 'lucide-react'
+import { Layout, RefreshCcw, Zap, LinkedinIcon } from 'lucide-react'
 
 const CONTACT_EMAIL = 'being.jasmin.miranda@gmail.com';
 const CALENDLY_URL =
@@ -199,13 +199,21 @@ export default function App() {
                   </a>
                 )}
               </div>
-              <p className="mt-4 text-xs text-stone-500">
-                Senior web engineer at Nike by day; custom site builder for
-                founders and service businesses on the side.
-              </p>
-              <p className="mt-1 text-xs text-stone-500">
-                Thoughtful, calm builds with clean code and clear communication.
-              </p>
+              <div className="mt-4 flex items-start gap-3">
+                <img
+                  src={headshot}
+                  alt="Photo of Jasmin"
+                  className="h-20 w-20 rounded-full object-cover border border-stone-200"
+                />
+
+                <p className="text-xs text-stone-500 leading-snug">
+                  Senior web engineer at Nike by day; custom site builder for
+                  founders and service businesses on the side.
+                  <br />
+                  Thoughtful, calm builds with intuitive design and clear communication.
+                </p>
+              </div>
+
             </div>
 
             <div className="flex-1 rounded-2xl border border-violet-100 bg-white p-4 text-sm shadow-sm">
@@ -574,6 +582,23 @@ export default function App() {
               <p>
                 📍 I’m based in Portland, Oregon, and I work with small businesses around the world.
               </p>
+              <div className="mt-4 flex items-center gap-2">
+                <a
+                  href="https://www.linkedin.com/in/jasminmirandab/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-stone-700 hover:text-violet-700 transition"
+                  aria-label="Visit my LinkedIn profile"
+                >
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-violet-200 bg-violet-50 text-violet-700 hover:bg-violet-100 transition">
+                    <LinkedinIcon size={16} />
+                  </span>
+                  <span className="underline underline-offset-4">
+                    Connect with me on LinkedIn
+                  </span>
+                </a>
+              </div>
+
             </div>
           </div>
         </Section>
