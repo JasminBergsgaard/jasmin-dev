@@ -211,13 +211,11 @@ export default function App() {
                 />
 
                 <p className="text-xs text-stone-500 leading-snug">
-                  Senior web engineer at Nike by day; custom site builder for
-                  founders and service businesses on the side.
+                  I’ve spent the last 6 years building and improving real websites — and now I help small businesses do the same.
                   <br />
-                  Thoughtful, calm builds with intuitive design and clear communication.
+                  My sites are simple and intuitively designed, built with care and clear communication.
                 </p>
               </a>
-
 
             </div>
 
