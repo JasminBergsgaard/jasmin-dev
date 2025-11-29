@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import headshot from './assets/professional-headshot.jpg';
+import { Layout, RefreshCcw, Zap } from 'lucide-react'
 
 const CONTACT_EMAIL = 'being.jasmin.miranda@gmail.com';
 const CALENDLY_URL =
@@ -179,15 +180,24 @@ export default function App() {
         {/* Services */}
         <Section id="services" title="What I build">
           <div className="grid gap-6 md:grid-cols-3">
+
+            {/* NEW SITES */}
             <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-stone-900">
-                New websites (1–5 pages)
-              </h3>
-              <p className="mt-2 text-sm text-stone-600">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl bg-violet-100 p-2 text-violet-700">
+                  <Layout size={18} />
+                </div>
+                <h3 className="text-sm font-semibold text-stone-900">
+                  New websites (1–5 pages)
+                </h3>
+              </div>
+
+              <p className="mt-3 text-sm text-stone-600">
                 From a blank page to a live site. Strategy, structure, design,
                 and development—for new businesses or offers that need a clean
                 start online.
               </p>
+
               <ul className="mt-3 space-y-1 text-xs text-stone-600">
                 <li>• Mobile-friendly, responsive layout</li>
                 <li>• Clear navigation and structure</li>
@@ -195,15 +205,23 @@ export default function App() {
               </ul>
             </div>
 
+            {/* REBUILDS */}
             <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-stone-900">
-                Full website rebuilds
-              </h3>
-              <p className="mt-2 text-sm text-stone-600">
-                Not a tweak—a fresh start. I take what&apos;s working (brand,
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl bg-violet-100 p-2 text-violet-700">
+                  <RefreshCcw size={18} />
+                </div>
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Full website rebuilds
+                </h3>
+              </div>
+
+              <p className="mt-3 text-sm text-stone-600">
+                Not a tweak—a fresh start. I take what's working (brand,
                 copy, photos) and rebuild your site with clean code and a modern
                 look.
               </p>
+
               <ul className="mt-3 space-y-1 text-xs text-stone-600">
                 <li>• Replace clunky DIY or legacy sites</li>
                 <li>• Clean, maintainable front-end</li>
@@ -211,86 +229,159 @@ export default function App() {
               </ul>
             </div>
 
+            {/* PROJECT PAGES */}
             <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-stone-900">
-                Focused project pages
-              </h3>
-              <p className="mt-2 text-sm text-stone-600">
+              <div className="flex items-center gap-3">
+                <div className="rounded-xl bg-violet-100 p-2 text-violet-700">
+                  <Zap size={18} />
+                </div>
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Focused project pages
+                </h3>
+              </div>
+
+              <p className="mt-3 text-sm text-stone-600">
                 Simple one-page or mini-sites for a specific offer, event, or
                 service. Designed to be clear, focused, and easy to act on.
               </p>
+
               <ul className="mt-3 space-y-1 text-xs text-stone-600">
                 <li>• Offer / event pages</li>
                 <li>• Lead or booking funnels</li>
                 <li>• Built to plug into your existing domain</li>
               </ul>
             </div>
+
           </div>
 
+          {/* DON'T DO */}
           <div className="mt-8 rounded-2xl border border-dashed border-violet-200 bg-violet-50 p-5 text-sm text-stone-700">
             <h3 className="text-sm font-semibold text-stone-900">
-              What I don&apos;t do
+              What I don't do
             </h3>
+
             <p className="mt-2 text-sm text-stone-600">
-              To keep projects clean and efficient, I don&apos;t take on:
+              To keep projects clean and efficient, I don't take on:
             </p>
+
             <ul className="mt-2 space-y-1 text-sm text-stone-600">
               <li>• One-off bug fixes on existing sites</li>
               <li>• Random plugin or theme issues</li>
               <li>• Deep debugging in legacy codebases</li>
             </ul>
+
             <p className="mt-3 text-sm text-stone-600">
-              If your current site feels messy or fragile, it&apos;s usually
-              faster and more cost-effective to rebuild it properly—and that&apos;s
-              exactly what I do.
+              If your current site feels messy or fragile, it's usually
+              faster and more cost-effective to rebuild it properly—and
+              that's exactly what I do.
             </p>
           </div>
         </Section>
 
         {/* Case study */}
         <Section id="projects" title="A real project I built">
-          <div className="grid gap-6 md:grid-cols-[1.2fr,1fr]">
-            <div
-              className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md animate-fade-in-up"
-              style={{ animationDelay: '80ms' }}
-            >
-              <h3 className="text-sm font-semibold text-stone-900">
-                Golden Hour Cleaning Co.
-              </h3>
-              <p className="mt-2 text-sm text-stone-600">
-                A premium eco-cleaning brand and website I designed and built
-                from scratch. Includes a custom quote calculator, booking flow,
-                and deployment to a custom domain.
-              </p>
-              <ul className="mt-3 space-y-1 text-xs text-stone-600">
-                <li>• React + Vite + Tailwind front-end</li>
-                <li>• Custom pricing logic and lead capture</li>
-                <li>• Live on a production domain for real customers</li>
-              </ul>
-              <div className="mt-4">
+          <div className="rounded-3xl border border-violet-200 bg-white shadow-sm overflow-hidden">
+            <div className="grid md:grid-cols-[1.2fr,1fr]">
+
+              {/* Left: Description */}
+              <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-violet-100">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-violet-700">
+                  Case study
+                </p>
+
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Golden Hour Cleaning Co.
+                </h3>
+
+                <p className="mt-2 text-sm text-stone-600">
+                  A premium eco-cleaning brand and website I designed and built from
+                  scratch for a real eco-cleaning business. The site includes a custom
+                  quote calculator and booking flow so visitors can go from “curious” to
+                  “scheduled” in just a few clicks.
+                </p>
+
+                <p className="mt-3 text-sm text-stone-600">
+                  Behind the scenes, the site handles pricing logic, estimated cleaning
+                  time, and lead capture automatically—so the business owner can spend
+                  less time replying to inquiry emails and more time doing great work.
+                </p>
+
+                {/* Skill / feature pills */}
+                <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-stone-700">
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Custom quote calculator
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Booking flow &amp; lead capture
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Coded from scratch (no templates)
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Mobile-friendly layout
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Deployed to custom domain
+                  </span>
+                </div>
+
                 <a
-                  href={GOLDEN_HOUR_URL}
+                  href="https://goldenhourcleaningco.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-4 py-2 text-xs font-medium text-violet-800 transition-all duration-200 hover:border-violet-300 hover:bg-white hover:shadow-sm"
+                  className="mt-5 inline-flex items-center justify-center rounded-full bg-stone-900 px-4 py-2 text-xs font-medium text-stone-50 hover:bg-stone-800 transition"
                 >
-                  View live site
-                  <span aria-hidden="true">↗</span>
+                  View live site ↗
                 </a>
               </div>
-            </div>
-            <div
-              className="rounded-2xl border border-stone-200 bg-violet-50 p-5 text-xs text-stone-600 animate-fade-in-up"
-              style={{ animationDelay: '160ms' }}
-            >
-              <p>
-                More examples coming soon. For now, this project shows how I
-                think about: clean design, clear flows, and production-ready
-                code that supports a real business.
-              </p>
+
+              {/* Right: Visual preview */}
+              <div className="bg-stone-950 text-white/80">
+                <div className="text-xs uppercase tracking-[0.2em] px-6 pt-4 pb-2 text-violet-400">
+                  Live preview
+                </div>
+
+                <div className="overflow-hidden border-t border-stone-800">
+                  {/* Fake browser chrome */}
+                  <div className="flex items-center gap-1 border-b border-stone-800 bg-stone-900 px-3 py-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                    <span className="ml-3 truncate text-xs text-stone-400">
+                      https://goldenhourcleaningco.com
+                    </span>
+                  </div>
+
+                  {/* Scaled iframe */}
+                  <div className="relative w-full overflow-hidden" style={{ height: '320px' }}>
+                    <div
+                      className="absolute top-0 left-0 origin-top-left"
+                      style={{
+                        transform: 'scale(0.6)',
+                        width: '166.66%',
+                        height: '166.66%',
+                      }}
+                    >
+                      <iframe
+                        src="https://goldenhourcleaningco.com"
+                        title="Golden Hour Cleaning Co. website preview"
+                        loading="lazy"
+                        className="w-full h-full border-0"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <p className="px-6 py-3 text-xs text-stone-400">
+                  This is a real, live project — not a mockup. I use the same process
+                  and level of detail for every client site.
+                </p>
+              </div>
             </div>
           </div>
         </Section>
+
+
 
         {/* Process */}
         <Section id="process" title="How it works">
