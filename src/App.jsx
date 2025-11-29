@@ -526,6 +526,9 @@ export default function App() {
                 collaborative, and practical—I&apos;ll explain things clearly
                 and keep your build simple and solid.
               </p>
+              <p>
+                📍 I’m based in Portland, Oregon, and I work with small businesses around the world.
+              </p>
             </div>
           </div>
         </Section>
