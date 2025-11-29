@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-violet-50 text-stone-900 font-sans;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+/* Shimmer highlight animation */
+.shimmer-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(110deg,
+      #7c3aed 20%,
+      #a78bfa 35%,
+      #7c3aed 50%);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmerFlow 3.5s ease-in-out infinite;
+}
+
+@keyframes shimmerFlow {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* Sparkle Button Container */
+.sparkle-btn {
+  isolation: isolate;
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  box-shadow: 0 0 22px rgba(124, 58, 237, 0.45);
+  transform: translateY(0);
+}
+
+/* Hover state — black velvet */
+.sparkle-btn:hover {
+  background: #0b0b0f;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Sparkle overlay */
+.sparkle-layer {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.35;
+
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, .5) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, .3) 1px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, .2) 1px, transparent 2px);
+
+  background-size: 40px 40px, 60px 60px, 80px 80px;
+  animation: sparkleFloat 16s linear infinite;
+}
+
+/* Move sparkles */
+@keyframes sparkleFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-160px, -160px) rotate(360deg);
+  }
+}
