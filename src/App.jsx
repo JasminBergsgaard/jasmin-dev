@@ -199,7 +199,11 @@ export default function App() {
                   </a>
                 )}
               </div>
-              <div className="mt-4 flex items-start gap-3">
+              <a
+                href="#about"
+                className="mt-4 flex items-start gap-3 rounded-xl border border-transparent hover:border-violet-200 hover:bg-violet-50 transition p-2 focus:outline-none"
+                aria-label="Go to About Jasmin section"
+              >
                 <img
                   src={headshot}
                   alt="Photo of Jasmin"
@@ -212,7 +216,8 @@ export default function App() {
                   <br />
                   Thoughtful, calm builds with intuitive design and clear communication.
                 </p>
-              </div>
+              </a>
+
 
             </div>
 
