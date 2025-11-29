@@ -231,8 +231,7 @@ export default function App() {
                 <li>• Front-end only builds deployed to your domain</li>
               </ul>
               <div className="mt-4 rounded-xl bg-violet-50 p-3 text-xs text-stone-600">
-                I don’t fix random bugs on existing sites. I rebuild them cleanly
-                so they’re easy to maintain going forward.
+                I don’t take on one-off bug-fix requests on existing sites, but I’m happy to build or rebuild your website from scratch.
               </div>
             </div>
           </div>
