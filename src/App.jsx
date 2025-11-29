@@ -9,7 +9,7 @@ const GOLDEN_HOUR_URL = 'https://goldenhourcleaningco.com';
 
 function Section({ id, title, children }) {
   return (
-    <section id={id} className="py-16 sm:py-20">
+    <section id={id} className="scroll-mt-20 py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-4">
         {title && (
           <h2 className="mb-6 text-2xl sm:text-3xl font-semibold tracking-tight text-stone-900">
@@ -24,6 +24,7 @@ function Section({ id, title, children }) {
 
 export default function App() {
   const [photoOpen, setPhotoOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -34,6 +35,10 @@ export default function App() {
     budget: '',
     openToRebuild: 'yes',
   });
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -65,8 +70,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-violet-50 text-stone-900">
       {/* Top nav / header */}
-      <header className="border-b border-violet-100 bg-white/80 backdrop-blur">
+      <header className="fixed top-0 left-0 z-50 w-full border-b border-violet-100 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+
+          {/* Left: Logo + Name */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => setPhotoOpen(true)}
@@ -79,36 +86,79 @@ export default function App() {
                 className="h-full w-full object-cover"
               />
             </button>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold tracking-tight">
+            <button
+              type="button"
+              onClick={scrollToTop}
+              className="leading-tight text-left focus:outline-none"
+              aria-label="Scroll to top"
+            >
+              <div className="text-sm font-semibold tracking-tight hover:underline">
                 Websites by Jasmin
               </div>
               <div className="text-xs text-stone-500">
                 Web engineer &amp; custom site builder
               </div>
-            </div>
+            </button>
+
           </div>
-          <nav className="hidden gap-6 text-sm text-stone-600 sm:flex">
-            <a href="#services" className="hover:text-stone-900">
-              Services
-            </a>
-            <a href="#projects" className="hover:text-stone-900">
-              Work
-            </a>
-            <a href="#process" className="hover:text-stone-900">
-              Process
-            </a>
-            <a href="#about" className="hover:text-stone-900">
-              About
-            </a>
-            <a href="#intake" className="hover:text-stone-900">
-              Start a project
-            </a>
+
+          {/* Desktop Nav */}
+          <nav className="hidden sm:flex gap-6 text-sm text-stone-600">
+            <a href="#services" className="hover:text-stone-900">Services</a>
+            <a href="#projects" className="hover:text-stone-900">Sample</a>
+            <a href="#process" className="hover:text-stone-900">How it works</a>
+            <a href="#about" className="hover:text-stone-900">About me</a>
+            <a href="#intake" className="hover:text-stone-900">Start a project</a>
           </nav>
+
+          {/* Hamburger (mobile only) */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="sm:hidden flex items-center justify-center rounded-md p-2 text-stone-700 hover:bg-violet-100 transition"
+            aria-label="Toggle menu"
+          >
+            <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 6h16M3 11h16M3 16h16" />
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 z-40 bg-black/30"
+              onClick={() => setMenuOpen(false)}
+            />
+
+            {/* Menu */}
+            <div className="absolute top-full left-0 right-0 z-50 bg-white border-t border-violet-100 shadow-md animate-fade-in-down">
+              <nav className="flex flex-col p-4 gap-3 text-sm text-stone-700">
+                {[
+                  { href: "#services", label: "Services" },
+                  { href: "#projects", label: "Sample" },
+                  { href: "#process", label: "How it works" },
+                  { href: "#about", label: "About me" },
+                  { href: "#intake", label: "Start a project" },
+                ].map(item => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="rounded-md px-3 py-2 hover:bg-violet-50 transition"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </>
+        )}
       </header>
 
-      <main>
+
+      <main className="pt-20">
         {/* Hero */}
         <section className="border-b border-violet-100 bg-gradient-to-b from-violet-50 to-violet-100">
           <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:flex-row sm:items-center sm:py-24">
@@ -180,7 +230,6 @@ export default function App() {
         {/* Services */}
         <Section id="services" title="What I build">
           <div className="grid gap-6 md:grid-cols-3">
-
             {/* NEW SITES */}
             <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
               <div className="flex items-center gap-3">
@@ -251,7 +300,6 @@ export default function App() {
                 <li>• Built to plug into your existing domain</li>
               </ul>
             </div>
-
           </div>
 
           {/* DON'T DO */}
@@ -282,7 +330,6 @@ export default function App() {
         <Section id="projects" title="A real project I built">
           <div className="rounded-3xl border border-violet-200 bg-white shadow-sm overflow-hidden">
             <div className="grid md:grid-cols-[1.2fr,1fr]">
-
               {/* Left: Description */}
               <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-violet-100">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-violet-700">
@@ -326,7 +373,7 @@ export default function App() {
                 </div>
 
                 <a
-                  href="https://goldenhourcleaningco.com"
+                  href={GOLDEN_HOUR_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-5 inline-flex items-center justify-center rounded-full bg-stone-900 px-4 py-2 text-xs font-medium text-stone-50 hover:bg-stone-800 transition"
@@ -348,7 +395,7 @@ export default function App() {
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
                     <span className="ml-3 truncate text-xs text-stone-400">
-                      https://goldenhourcleaningco.com
+                      {GOLDEN_HOUR_URL}
                     </span>
                   </div>
 
@@ -363,7 +410,7 @@ export default function App() {
                       }}
                     >
                       <iframe
-                        src="https://goldenhourcleaningco.com"
+                        src={GOLDEN_HOUR_URL}
                         title="Golden Hour Cleaning Co. website preview"
                         loading="lazy"
                         className="w-full h-full border-0"
@@ -380,8 +427,6 @@ export default function App() {
             </div>
           </div>
         </Section>
-
-
 
         {/* Process */}
         <Section id="process" title="How it works">
@@ -686,7 +731,6 @@ export default function App() {
                 </div>
               </label>
             </div>
-
 
             <div className="md:col-span-2 flex flex-col gap-2 pt-2 sm:flex-row sm:items-center sm:justify-between">
               <button
