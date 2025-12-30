@@ -5,7 +5,7 @@ import { Layout, RefreshCcw, Zap, LinkedinIcon } from 'lucide-react'
 const CONTACT_EMAIL = 'being.jasmin.miranda@gmail.com';
 const CALENDLY_URL =
   'https://calendly.com/being-jasmin-miranda/15-minute-website-intro-call';
-const GOLDEN_HOUR_URL = 'https://goldenhourcleaningco.com';
+const GOLDEN_HOUR_URL = 'https://goldenhourcleaningco.com/residential';
 
 function Section({ id, title, children }) {
   return (
