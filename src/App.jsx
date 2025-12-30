@@ -6,6 +6,7 @@ const CONTACT_EMAIL = 'being.jasmin.miranda@gmail.com';
 const CALENDLY_URL =
   'https://calendly.com/being-jasmin-miranda/15-minute-website-intro-call';
 const GOLDEN_HOUR_URL = 'https://goldenhourcleaningco.com/residential';
+const TESS_SITE_URL = 'https://theconsciousmvt.com'
 
 function Section({ id, title, children }) {
   return (
@@ -337,8 +338,8 @@ export default function App() {
         </Section>
 
         {/* Case study */}
-        <Section id="projects" title="A real project I built">
-          <div className="rounded-3xl border border-violet-200 bg-white shadow-sm overflow-hidden">
+        <Section id="projects" title="Real projects I built">
+          <div className="rounded-3xl border mb-8 border-violet-200 bg-white shadow-sm overflow-hidden">
             <div className="grid md:grid-cols-[1.2fr,1fr]">
               {/* Left: Description */}
               <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-violet-100">
@@ -436,6 +437,106 @@ export default function App() {
               </div>
             </div>
           </div>
+          <div className="rounded-3xl border mb-8 border-violet-200 bg-white shadow-sm overflow-hidden">
+            <div className="grid md:grid-cols-[1.2fr,1fr]">
+              {/* Left: Description */}
+              <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-violet-100">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-violet-700">
+                  Case study
+                </p>
+
+                <h3 className="text-sm font-semibold text-stone-900">
+                  Tess — Sound Healing &amp; Events
+                </h3>
+
+                <p className="mt-2 text-sm text-stone-600">
+                  A calm, immersive website I designed and built for a sound healer and
+                  facilitator offering group journeys, private sessions, and in-person
+                  events. The site is intentionally spacious and sensory-forward, helping
+                  visitors feel grounded before they even book.
+                </p>
+
+                <p className="mt-3 text-sm text-stone-600">
+                  The experience guides users from resonance to action with clear
+                  offerings, gentle storytelling, and an intuitive layout—making it easy
+                  to explore sessions, understand what to expect, and sign up with
+                  confidence.
+                </p>
+
+                {/* Skill / feature pills */}
+                <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-stone-700">
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Custom design &amp; layout
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Event &amp; session-focused UX
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Calm, sensory-driven visual system
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Mobile-first build
+                  </span>
+                  <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1">
+                    Deployed to custom domain
+                  </span>
+                </div>
+
+                <a
+                  href={TESS_SITE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex items-center justify-center rounded-full bg-stone-900 px-4 py-2 text-xs font-medium text-stone-50 hover:bg-stone-800 transition"
+                >
+                  View live site ↗
+                </a>
+              </div>
+
+              {/* Right: Visual preview */}
+              <div className="bg-stone-950 text-white/80">
+                <div className="text-xs uppercase tracking-[0.2em] px-6 pt-4 pb-2 text-violet-400">
+                  Live preview
+                </div>
+
+                <div className="overflow-hidden border-t border-stone-800">
+                  {/* Fake browser chrome */}
+                  <div className="flex items-center gap-1 border-b border-stone-800 bg-stone-900 px-3 py-2">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                    <span className="ml-3 truncate text-xs text-stone-400">
+                      {TESS_SITE_URL}
+                    </span>
+                  </div>
+
+                  {/* Scaled iframe */}
+                  <div className="relative w-full overflow-hidden" style={{ height: "320px" }}>
+                    <div
+                      className="absolute top-0 left-0 origin-top-left"
+                      style={{
+                        transform: "scale(0.6)",
+                        width: "166.66%",
+                        height: "166.66%",
+                      }}
+                    >
+                      <iframe
+                        src={TESS_SITE_URL}
+                        title="Tess sound healing website preview"
+                        loading="lazy"
+                        className="w-full h-full border-0"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <p className="px-6 py-3 text-xs text-stone-400">
+                  This is a real, live project — designed to translate an embodied,
+                  in-person practice into a grounded digital experience.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </Section>
 
         {/* Process */}
